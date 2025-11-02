@@ -21,8 +21,24 @@ To write a Python program to:
 6. Display the updated list.
 
 ##  Program:
-Add Code Here
+from collections import deque
+ q = deque()
+ n=int(input())
+ for i in range(n):
+ q.append(input())
+ for i in range(2):
+ q.popleft()
+ print(q)
+ q = deque()
+ n=int(input())
+ for i in range(n):
+ q.append(input())
+ for i in range(2):
+ q.popleft()
+ print(q)
 
 ### Output:
+<img width="721" height="258" alt="image" src="https://github.com/user-attachments/assets/5b0fa6a8-8074-45f1-9d13-937de1de95c4" />
 
 ## Result:
+Thus the program was executed successfully
