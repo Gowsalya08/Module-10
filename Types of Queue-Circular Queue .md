@@ -27,8 +27,42 @@ To develop a Python program that implements a Circular Queue:
 ---
 
 ## 💻 Program:
-Add Code Here
+ class MyCircularQueue():
+ def init(self, k):
+ self.k = k
+ self.queue = [None] * k
+ self.head = self.tail = -1
+ def enqueue(self, data):
+ if ((self.tail + 1) % self.k == self.head):
+ print("The circular queue is full\n")
+ elif (self.head == -1):
+ self.head = 0
+ self.tail = 0
+ self.queue[self.tail] = data
+ else:
+ self.tail = (self.tail + 1) % self.k
+ self.queue[self.tail] = data
+ # def printCQueue(self):
+ if(self.head == -1):
+ print("No element in the circular queue")
+ elif (self.tail >= self.head):
+ for i in range(self.head, self.tail + 1):
+ print(self.queue[i], end=" ")
+ print()
+ else:
+ for i in range(self.head, self.k):
+ print(self.queue[i], end=" ")
+ for i in range(0, self.tail + 1):
+ print(self.queue[i], end=" ")
+ print()
+ obj = MyCircularQueue(5)
+ for i in range(5):
+ obj.enqueue(int(input()))
+ obj.printCQueue()
 
 ### Output:
 
+<img width="570" height="447" alt="image" src="https://github.com/user-attachments/assets/6278665a-e66c-4551-91c3-85a1595e4248" />
+
 ## Result:
+Thus the program was executed successfully
